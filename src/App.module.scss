@@ -1,4 +1,10 @@
-.App {
+.app {
   min-height: 100vh;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Segoe UI Emoji";
+}
+
+.header {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
 }
