@@ -1,2 +1,35 @@
+@use "../../_utils/mixins" as *;
+@use "../../_utils/vars" as *;
+
 .addProduct {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.section {
+  border: 1px solid $cGray100;
+  padding: 30px 100px;
+
+  @include onPhone {
+    padding: 20px 0;
+  }
+}
+
+.title {
+  margin-bottom: 30px;
+}
+
+.input {
+  @include input;
+}
+
+.button {
+  @include black-button;
+}
+
+.block {
+  display: flex;
+  gap: 12px;
 }
