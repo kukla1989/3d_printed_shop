@@ -1,2 +1,43 @@
+@use "../../_utils/mixins" as *;
+@use "../../_utils/vars" as *;
+
 .productPage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding: 16px;
+}
+
+.media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $cWhite;
+  border-radius: 8px;
+  min-height: 300px;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.name {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: 500;
 }
