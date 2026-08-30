@@ -1,8 +1,8 @@
-import styles from "./AddProduct.module.scss"
+import styles from "./AddProductPage.module.scss"
 import { useState } from "react";
 import ErrorModal from "../../components/ErrorModal/ErrorModal.tsx";
 
-function AddProduct() {
+function AddProductPage() {
   const [shafaLink, setShafaLink] = useState("")
   const [error, setError] = useState<string | null>(null)
   const handleShafaAdd = () => {
@@ -98,4 +98,4 @@ function AddProduct() {
   )
 }
 
-export default AddProduct;
+export default AddProductPage;
