@@ -1,11 +1,20 @@
 import styles from "./AddProduct.module.scss"
 import { useState } from "react";
+import ErrorModal from "../../components/ErrorModal/ErrorModal.tsx";
 
 function AddProduct() {
   const [shafaLink, setShafaLink] = useState("")
+  const [error, setError] = useState<string | null>(null)
+  const handleShafaAdd = () => {
+    if (!shafaLink) {
+      setError('будь-ласка введіть ссилку')
+      return;
+    }
+  }
 
   return (
     <div className={styles.addProduct}>
+      {(error !== null) && <ErrorModal msg={error} onClose={() => setError(null)} />}
       <div className={styles.section}>
         <div className={styles.title}>
           добавить виріб через посилання із shafa
@@ -19,7 +28,7 @@ function AddProduct() {
                  onChange={(e) => setShafaLink(e.target.value)}
           />
 
-          <button className={styles.button}>добавить</button>
+          <button className={styles.button} onClick={handleShafaAdd}>добавить</button>
         </div>
       </div>
 

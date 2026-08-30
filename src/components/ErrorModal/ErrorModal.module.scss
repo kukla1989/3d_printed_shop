@@ -1,0 +1,31 @@
+@use "../../_utils/mixins" as *;
+@use "../../_utils/vars" as *;
+
+.modal {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 14px 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  background: #FCE9E8;
+  border: 1px solid #e74c3c;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: #e74c3c;
+
+  @include onPhone {
+    right: 3px;
+    padding: 5px
+  }
+}
+
+.close {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 20px;
+}
