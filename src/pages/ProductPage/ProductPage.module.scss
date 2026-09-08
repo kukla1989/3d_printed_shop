@@ -2,42 +2,91 @@
 @use "../../_utils/vars" as *;
 
 .productPage {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  margin: 40px;
+  justify-content: center;
+
+  @include onPhone {
+    flex-direction: column;
+    margin: 0;
+  }
 }
 
-.media {
+//phone images
+.phoneSlider {
+  display: none;
+
+  @include onPhone {
+    display: block;
+  }
+}
+
+.slider {
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: $cWhite;
-  border-radius: 8px;
-  min-height: 300px;
+  gap: 10px;
+}
+
+.navBtn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: rgba(0, 0, 0, 0.45);
+  color: $cWhite;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.phoneImage {
+  width: 100%;
+}
+
+.counter {
+  justify-self: center;
+  padding: 2px 8px;
+  margin-top: 10px;
+
+  color: $cWhite;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+
+//desktop images
+.imgs {
+  width: 500px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  @include onPhone {
+    display: none;
+    width: 100%;
+  }
 }
 
 .image {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-  border-radius: 8px;
-}
+  width: 240px;
+  cursor: pointer;
 
+  &:first-child {
+    width: 500px;
 
-.info {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+    @include onPhone {
+      width: 100%;
+    }
+  }
 }
 
 .name {
-  margin: 0;
-  font-size: 24px;
-  font-weight: 600;
-}
-
-.price {
-  font-size: 20px;
-  font-weight: 500;
+  color: $cBlack100;
+  font-size: 40px;
 }
